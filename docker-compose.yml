@@ -1,0 +1,14 @@
+tasktest:
+  image: tasktest
+  environment:
+    - MONGO_URL=mongodb://mongodb/task
+    - ROOT_URL=http://localhost:80
+  links:
+    - mongodb
+  ports:
+    - 80:80
+
+mongodb:
+   image: mongo
+   ports:
+     - 27017
